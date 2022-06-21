@@ -13,7 +13,7 @@ dp = Dispatcher(bot)
 # ----- Файлы для работы -----
 with open("./vocabulary.json", "r") as f_voc:
     vocabulary = json.load(f_voc)
-with open("schedule.json", "r") as f_sch:
+with open("schedule.json", "rb") as f_sch:
     schedule = json.load(f_sch)
 with open ("./grammar.json", "r") as f_gram:
     grammar = json.load(f_gram)
@@ -55,7 +55,7 @@ async def bot_message(message: types.Message):
     global task
 
     if message.text == "View olympiad schedule":
-        await bot.send_message(message.from_user.id, schedule)
+        await bot.send_message(message.from_user.id, schedule["0"])
 
     if message.text == "Get tasks":
         await bot.send_message(
