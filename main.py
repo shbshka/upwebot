@@ -4,7 +4,7 @@ from aiogram import types
 import markups as nav
 import random
 
-TOKEN = "5262008776:AAHeEOyHn8O97K2WhjApMM6MX0LWthmw7lo"
+TOKEN = "TOKEN"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
