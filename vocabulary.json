@@ -1,0 +1,32 @@
+{
+    "0": {
+        "question_text": "Choose the right synonym for the selected word.\nIt is hard for someone with an [affinity] for warm weather to be happy living in Alaska.\nMy cat has an [affinity] for small, dark hiding places – I've often found her asleep in my dresser drawer, under the footstool, and inside my suitcase",
+        "correct_answer": ["preference"],
+        "incorrect_answer": ["fear", "ignorance"]
+    },
+    "1": {
+        "question_text": "Choose the right synonym for the selected word.\nThe short-story class is full of [fledgling] writers. They're all enthusiastic, but since they are beginners, they are shy about sharing their works.\nMyra and her sisters are excited about their [fledgling] catering service, which was booked for three parties during its first week of business.",
+        "correct_answer": ["new"],
+        "incorrect_answer": ["old", "different"]
+    },
+    "2": {
+        "question_text": "Choose the right synonym for the selected word.\nThe [hackneyed] phrase 'Have a nice day!' is heard so often that it has become almost meaningless.\nThe worst part of family reunions is hearing my uncle's [hackneyed] jokes.",
+        "correct_answer": ["worn-out"],
+        "incorrect_answer": ["insulting", "funny"]
+    },
+    "3": {
+        "question_text": "Choose the right synonym for the underlined word.\nMrs. Lagran finally insisted that her husband see a doctor about his [incessant] snoring.\nThe children nearly drove their parents crazy with their [incessant] demands: 'Are we there yet? Is it much further? How much longer?'",
+        "correct_answer": ["nonstop"],
+        "incorrect_answer": ["silent", "nasty"]
+    },
+    "4": {
+        "question_text": "Choose the right synonym for the underlined word.\nThe [opulence] of the magnificent, luxurious resort was it stark contrast to the poverty of the little fishing village at its gates.\nThe writer Thoreau had no liking for [opulence]. He wrote in his journal, 'That man is richest whose pleasures are the cheapest.'",
+        "correct_answer": ["richness"],
+        "incorrect_answer": ["permanence", "closeness"]
+    },
+    "5": {
+        "question_text": "Choose the right synonym for the underlined word.\nThe [proximity] of the railroad tracks worries neighbourhood parents when their children play outside.\nI don’t drive a car, so when I was apartment hunting, I had to consider the [proximity] of public transportation.",
+        "correct_answer": ["nearness"],
+        "incorrect_answer": [""]
+    }
+}
