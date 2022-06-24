@@ -13,12 +13,10 @@ btnGrammar = KeyboardButton(text='Grammar tasks')
 btnCS = KeyboardButton(text='Country studies tasks')
 tasksMenu = ReplyKeyboardMarkup(resize_keyboard=True).add(btnVocabulary, btnGrammar, btnCS, btnMain)
 
-# ----- Vocabulary markups -----
+# ----- Task markups -----
 btnStart = InlineKeyboardButton(text="start", callback_data="start_test")
 startTest = InlineKeyboardMarkup().add(btnStart)
 
 btnContinue = InlineKeyboardButton(text='Continue?', callback_data='start_test')
 btnQuit = InlineKeyboardButton(text='Quit', callback_data='quit_test')
 ifQuit = InlineKeyboardMarkup().add(btnContinue, btnQuit)
-
-# ----- Grammar markups -----

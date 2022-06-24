@@ -4,7 +4,7 @@ from aiogram import types
 import markups as nav
 import random
 
-TOKEN = "TOKEN"
+TOKEN = "5262008776:AAHeEOyHn8O97K2WhjApMM6MX0LWthmw7lo"
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -15,8 +15,10 @@ with open("./vocabulary.json", "r") as f_voc:
     vocabulary = json.load(f_voc)
 with open("schedule.json", "rb") as f_sch:
     schedule = json.load(f_sch)
-with open ("./grammar.json", "r") as f_gram:
+with open("./grammar.json", "r") as f_gram:
     grammar = json.load(f_gram)
+with open("./cs.json", "r") as f_cs:
+    cs = json.load(f_cs)
 
 # ----- Глобальные переменные -----
 score = 0
@@ -42,7 +44,6 @@ async def reset():
 # ----- Стартовое сообщение -----
 @dp.message_handler(commands=["start"])
 async def command_start(message: types.Message):
-    await reset()
     await bot.send_message(
         message.from_user.id, "Hello, {0.first_name}".format(message.from_user), reply_markup=nav.mainMenu
     )
@@ -63,6 +64,7 @@ async def bot_message(message: types.Message):
          )
 
     if message.text == "Vocabulary tasks":
+        await reset()
         task = vocabulary
         qs = randomizer(task)
         await bot.send_message(
@@ -76,6 +78,13 @@ async def bot_message(message: types.Message):
 
     if message.text == "Grammar tasks":
         task = grammar
+        qs = randomizer(task)
+        await bot.send_message(
+            message.from_user.id, "Press 'start' to begin the exercise.", reply_markup=nav.startTest
+        )
+
+    if message.text == "Country studies tasks":
+        task = cs
         qs = randomizer(task)
         await bot.send_message(
             message.from_user.id, "Press 'start' to begin the exercise.", reply_markup=nav.startTest

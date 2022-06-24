@@ -1,6 +1,6 @@
 {
     "0": {
-        "question_text": "Choose the right synonym for the selected word.\nIt is hard for someone with an [affinity] for warm weather to be happy living in Alaska.\nMy cat has an [affinity] for small, dark hiding places – I've often found her asleep in my dresser drawer, under the footstool, and inside my suitcase",
+        "question_text": "Choose the right synonym for the selected word.\nIt is hard for someone with an [affinity] for warm weather to be happy living in Alaska.\nMy cat has an [affinity] for small, dark hiding places - I've often found her asleep in my dresser drawer, under the footstool, and inside my suitcase",
         "correct_answer": ["preference"],
         "incorrect_answer": ["fear", "ignorance"]
     },
@@ -25,8 +25,8 @@
         "incorrect_answer": ["permanence", "closeness"]
     },
     "5": {
-        "question_text": "Choose the right synonym for the underlined word.\nThe [proximity] of the railroad tracks worries neighbourhood parents when their children play outside.\nI don’t drive a car, so when I was apartment hunting, I had to consider the [proximity] of public transportation.",
+        "question_text": "Choose the right synonym for the underlined word.\nThe [proximity] of the railroad tracks worries neighbourhood parents when their children play outside.\nI don't drive a car, so when I was apartment hunting, I had to consider the [proximity] of public transportation.",
         "correct_answer": ["nearness"],
-        "incorrect_answer": [""]
+        "incorrect_answer": ["similarity", "contrast"]
     }
 }
