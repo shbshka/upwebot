@@ -1,5 +1,6 @@
 import nest_asyncio
 import aioschedule
+import logging
 import aiogram.utils.markdown as md
 from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
@@ -46,9 +47,9 @@ async def command_start(message: types.Message):
         message.from_user.id, "Hello, {0.first_name}!".format(message.from_user), reply_markup=nav.mainMenu
     )
 
-
-# ----- Регистрация (не работает) -----
-
+# -----------------------
+# ----- Регистрация -----
+# -----------------------
 
 class Registration(StatesGroup):
     name = State()
@@ -57,9 +58,15 @@ class Registration(StatesGroup):
 
 @dp.message_handler(commands=["register"])
 async def assing_variables(message: types.Message):
+    await bot.send_message(message.from_user.id, "Enter your name", reply_markup=nav.registration)
     await Registration.name.set()
-    await bot.send_message(message.from_user.id, "Enter your name", reply_markup=nav.register)
 
+
+@dp.message_handler(state="*", commands=["cancel"])
+@dp.message_handler(Text(equals="Cancel registration"), state="*")
+async def cancel_registration(message: types.Message, state: FSMContext):
+    await state.finish()
+    await message.reply("Registration cancelled", reply_markup=nav.mainMenu)
 
 @dp.message_handler(state=Registration.name)
 async def process_get_name(message: types.Message, state: FSMContext):
@@ -92,8 +99,6 @@ async def process_get_code(message: types.Message, state: FSMContext):
 
     await state.finish()
 
-
-
 # -----------------------------------
 # ----- Обработка reply markups -----
 #------------------------------------
@@ -116,6 +121,9 @@ async def bot_message(message: types.Message):
         await bot.send_message(
             message.from_user.id, "Press here: /register"
         )
+
+    if message.text == "Cancel registration":
+        await bot.send_message(message.from_user.id, "Press here: /cancel")
 
     if message.text == "Vocabulary tasks":
         await reset()
@@ -180,7 +188,7 @@ async def callback_handler(call: types.CallbackQuery):
         except IndexError:
             await bot.send_message(
                 call.from_user.id,
-                f"Congratulations! You've completed all tasks! Your score: {score}.\nStart again? /start"
+                f"Congratulations! You've completed all tasks! Your score: {score}.", reply_markup=nav.mainMenu
             )
             await reset()
         else:
@@ -212,7 +220,7 @@ async def callback_handler(call: types.CallbackQuery):
 
     if call.data == "quit_test":
         await bot.send_message(
-            call.from_user.id, f"Thank you for participation! Your score: {score}"
+            call.from_user.id, f"Thank you for participation! Your score: {score}", reply_markup=nav.mainMenu
         )
         await call.message.edit_reply_markup()
         await reset()

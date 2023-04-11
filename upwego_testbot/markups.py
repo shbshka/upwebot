@@ -47,10 +47,5 @@ btnAnswer = InlineKeyboardButton(text="Show answer", callback_data="show_answer"
 show_answer = InlineKeyboardMarkup().add(btnAnswer)
 
 # ----- Registration keyboard -----
-btnSetName = KeyboardButton(text="Enter name")
-btnSetSurname = KeyboardButton(text="Enter surname")
-btnSetCode = KeyboardButton(text="Enter Upwego code")
-ifCancel = KeyboardButton(text="Cancel")
-ifFinish = KeyboardButton(text="Finish registration")
-register = ReplyKeyboardMarkup(resize_keyboard=True).add(btnSetName, btnSetSurname,
-                                                         btnSetCode, ifFinish, ifCancel)
+btnCancelRegistration = KeyboardButton(text="Cancel registration")
+registration = ReplyKeyboardMarkup(resize_keyboard=True).add(btnCancelRegistration)
